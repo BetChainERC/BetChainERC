@@ -1,1 +1,1 @@
-# @l2beat/shared
+# @BetChain/shared

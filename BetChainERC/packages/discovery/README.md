@@ -1,1 +1,1 @@
-# @l2beat/discovery
+# @BetChain/discovery

@@ -1,0 +1,55 @@
+{
+  "name": "BetChain",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": "^16.0.0",
+    "yarn": ">=1.22.0 <2"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "build": "wsrun -ecsm build",
+    "build:backend": "wsrun -p @BetChain/backend -recsm build",
+    "build:frontend": "wsrun -p @BetChain/frontend -recsm build",
+    "build:dependencies": "wsrun -p @BetChain/{shared-pure,shared,discovery,config} -recsm build",
+    "clean": "wsrun -ecam clean",
+    "fix": "yarn lint:fix && yarn format:fix",
+    "format": "wsrun -ecam format",
+    "format:fix": "wsrun -ecam format:fix",
+    "lint": "wsrun -ecam lint",
+    "lint:fix": "wsrun -ecam lint:fix",
+    "start": "cd packages/backend && yarn start",
+    "test": "wsrun -ecam test",
+    "test:exclude-backend": "wsrun -p @BetChain/{shared-pure,shared,discovery,config,frontend} -ecam test",
+    "typecheck": "wsrun -ecam typecheck",
+    "ci:check": "yarn clean && yarn build && yarn format && yarn lint && yarn typecheck && yarn test",
+    "heroku-postbuild": "yarn build:backend",
+    "checkout": "yarn clean && yarn && yarn build"
+  },
+  "devDependencies": {
+    "@sinonjs/fake-timers": "^10.0.2",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.11.18",
+    "@types/sinonjs__fake-timers": "^8.1.2",
+    "@typescript-eslint/eslint-plugin": "^5.48.2",
+    "@typescript-eslint/parser": "^5.48.2",
+    "earl": "^1.1.0",
+    "esbuild": "^0.14.43",
+    "esbuild-register": "^3.3.3",
+    "eslint": "^8.32.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-no-only-tests": "^3.1.0",
+    "eslint-plugin-react": "^7.32.1",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "mocha": "^10.2.0",
+    "prettier": "^2.8.3",
+    "typescript": "^4.9.4",
+    "wait-for-expect": "^3.0.2",
+    "wsrun": "^5.2.4"
+  }
+}

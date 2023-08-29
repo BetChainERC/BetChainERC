@@ -1,6 +1,6 @@
-# @l2beat/frontend
+# @BetChain/frontend
 
-The statically generated frontend that is the face of L2BEAT.
+The statically generated frontend that is the face of BetChain.
 
 ## Setup
 

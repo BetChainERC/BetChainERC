@@ -1,4 +1,4 @@
-# @l2beat/shared-pure
+# @BetChain/shared-pure
 
 ### Warning
 
